@@ -1,6 +1,9 @@
+# encoding: utf-8
 from music import *
 
 # Configuración del tempo y la parte para la melodía
+score = Score("Chiptune", 130.0)
+
 melodyPart = Part(LEAD_1_SQUARE, 0)
 bassPart = Part(LEAD_8_BASS_LEAD, 1)
 sustainPart = Part(LEAD_4_CHIFF, 3)
@@ -187,8 +190,11 @@ bassPart.addPhrase(bassPhrase)
 sustainPart.addPhrase(sustainPhrase)
 echoPart.addPhrase(echoPhrase)
 
+score.addPart(melodyPart)
+score.addPart(bassPart)
+score.addPart(sustainPart)
+score.addPart(echoPart)
+
 # Reproducir todas las partes
-Play.midi(sustainPart)
-Play.midi(melodyPart)
-Play.midi(bassPart)
-Play.midi(echoPart)
+Write.midi(score, "composicion.mid")
+Play.midi(score)

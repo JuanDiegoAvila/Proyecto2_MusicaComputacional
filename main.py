@@ -23,7 +23,6 @@ drumDurations = [
     SN, SN, SN, SN, SN, SN, SN, SN
 ] * 28
     
-
 channel1Pitches = [
     REST, A4, G4,
 
@@ -305,5 +304,5 @@ score.addPart(drumPart)
 score.addPart(chanel2Part)
 score.addPart(drum2Part)
 
-
+Write.midi(score, "chiptune.mid")
 Play.midi(score)
